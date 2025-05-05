@@ -26,7 +26,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-1">
-              <Image
+              {/* <Image
                 src="/logo.png"
                 width={30}
                 height={30}
@@ -34,8 +34,8 @@ const Navbar = () => {
                 alt="Logo"
                 unoptimized={true}
                 className="rounded-xl"
-              />
-              <span className="text-2xl font-bold">Bloggify</span>
+              /> */}
+              <span className="text-2xl font-bold">SaasStarter</span>
             </Link>
           </div>
           <div className="hidden md:flex items-center space-x-6">
