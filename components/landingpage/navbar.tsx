@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
 import AnchorNav from '../anchor-nav';
 import { useSession } from 'next-auth/react';
 import UserAccountNav from '../UserAccountNav';
@@ -17,8 +17,8 @@ const Navbar = () => {
   };
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'posts', href: '/blog' },
-    { name: 'contactUs', href: '/contactus' },
+    { name: 'Dashboard', href: '/dashboard' },
+    { name: 'signup', href: '/signup' },
   ];
   return (
     <nav className="z-50 sticky top-0 w-full dark:bg-zinc-950/10 bg-white/15 shadow-lg shadow-neutral-600/5 backdrop-blur-lg border-b border-primary/10">
