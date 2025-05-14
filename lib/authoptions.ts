@@ -1,13 +1,18 @@
 import db from "@/lib/db";
 import { NextAuthOptions, type DefaultSession } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-
+import GitHubProvider from "next-auth/providers/github";
+import { Provider } from "@prisma/client";
 export const authOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID ?? "",
       clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? "",
     }),
+    GitHubProvider({
+      clientId: process.env.GITHUB_CLIENT_ID ?? "",
+      clientSecret: process.env.GITHUB_CLIENT_SECRET ?? "",
+    })
   ],
   pages: {
     signIn: "/signin",
@@ -33,7 +38,7 @@ export const authOptions = {
             email: params.user.email,
             image: params.user.image ?? "",
             name: params.user.name ?? "",
-            provider: "Google",
+            provider: params.account?.provider as Provider ?? "credentials",
           },
         });
         return true;

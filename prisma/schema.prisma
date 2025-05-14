@@ -17,5 +17,13 @@ model User {
 }
 
 enum Provider {
-  Google
+  google
+  github
 }
+
+// enum Provider {
+//   Google
+//   google
+//   GitHub
+//   github
+// }

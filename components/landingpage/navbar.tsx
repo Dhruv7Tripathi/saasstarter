@@ -2,10 +2,10 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 // import Image from 'next/image';
-import AnchorNav from '../anchor-nav';
+import AnchorNav from '../auth/anchor-nav';
 import { useSession } from 'next-auth/react';
-import UserAccountNav from '../UserAccountNav';
-import SignInButton from '../SignInButton';
+import UserAccountNav from '../auth/UserAccountNav';
+import SignInButton from '../auth/SignInButton';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
