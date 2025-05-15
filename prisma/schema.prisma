@@ -20,10 +20,3 @@ enum Provider {
   google
   github
 }
-
-// enum Provider {
-//   Google
-//   google
-//   GitHub
-//   github
-// }

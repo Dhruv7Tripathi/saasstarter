@@ -176,23 +176,25 @@ export default function Home() {
           <Button
             type="button"
             variant="outline"
-            className="w-full flex items-center justify-center gap-2"
+            className="w-full flex items-center justify-center gap-2 py-2"
             onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
             disabled={isLoading}
           >
             <Image src="/google.png" alt="Google" width={20} height={20} />
             Log in with Google
           </Button>
+
           <Button
             type="button"
             variant="outline"
-            className="w-full flex items-center justify-center p-5"
+            className="w-full flex items-center justify-center gap-2 py-2"
             onClick={() => signIn("github", { callbackUrl: "/dashboard" })}
             disabled={isLoading}
           >
-            <Image src="/google.png" alt="GitHub" width={20} height={20} />
+            <Image src="/github.png" alt="GitHub" width={20} height={20} />
             Log in with GitHub
           </Button>
+
 
           <p className="text-center mt-6 text-sm text-muted-foreground">
             Don't have an account?{" "}
