@@ -1,0 +1,71 @@
+'use client';
+
+import axios from 'axios';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+
+import { toast } from 'sonner';
+import { LuLoader } from 'react-icons/lu';
+
+import { ApiResponse } from '@/lib/apiresponse';
+
+export default function VerifyForm({ email }: { email: string }) {
+  const [otp, setOtp] = useState('');
+  const [loading, setLoading] = useState(false);
+  const router = useRouter()
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true)
+    try {
+      const response = await axios.post<ApiResponse>('/api/auth/verify', { email, otp });
+      toast.success(response.data.message);
+      router.replace('/signin');
+    } catch (error) {
+      toast.error('Invalid OTP or email');
+    } finally {
+      setLoading(false)
+    }
+  };
+
+  return (
+    <div className="bg-white p-8 rounded-lg shadow-md w-96">
+      <h1 className="text-2xl font-semibold mb-6 text-center">
+        Verify your email
+      </h1>
+      <p className="text-center text-sm text-gray-600 mb-6">
+        Enter the OTP sent to {email}
+      </p>
+      <form onSubmit={handleSubmit}>
+        <div className="mb-6">
+          <input
+            type="text"
+            placeholder="Enter OTP"
+            className="w-full p-2 bg-gray-100 rounded text-center text-2xl tracking-widest"
+            value={otp}
+            onChange={(e) => setOtp(e.target.value)}
+            maxLength={6}
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          className="w-full flex justify-center items-center bg-green-500 text-white p-2 rounded hover:bg-emerald-600 transition-colors"
+        >
+          {loading ? (
+            <>
+              <LuLoader className="mr-2 h-4 w-4 animate-spin" />
+              Please wait
+            </>
+          ) : (
+            'Verify'
+          )}
+        </button>
+      </form>
+      <p className="mt-2 text-center text-sm text-gray-600">
+        <Link href="/signin" className="text-green-600 hover:underline">Back to Sign In</Link>
+      </p>
+    </div>
+  );
+}
