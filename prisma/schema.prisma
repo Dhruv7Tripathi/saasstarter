@@ -8,12 +8,15 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(uuid())
-  name      String
-  image     String
-  email     String   @unique
-  createdAt DateTime @default(now())
-  provider  Provider
+  id         String   @id @default(uuid())
+  name       String
+  image      String
+  email      String   @unique
+  password   String?
+  isVerified Boolean  @default(false)
+  verifyCode String?
+  createdAt  DateTime @default(now())
+  provider   Provider
 }
 
 enum Provider {
