@@ -3,6 +3,9 @@ import { NextAuthOptions, type DefaultSession } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
 import { Provider } from "@prisma/client";
+import CredentialsProvider from 'next-auth/providers/credentials';
+import bcrypt from "bcrypt";
+import prisma from "@/lib/db";
 export const authOptions = {
   providers: [
     GoogleProvider({
@@ -12,7 +15,44 @@ export const authOptions = {
     GitHubProvider({
       clientId: process.env.GITHUB_CLIENT_ID ?? "",
       clientSecret: process.env.GITHUB_CLIENT_SECRET ?? "",
-    })
+    }),
+    CredentialsProvider({
+      id: 'credentials',
+      name: 'Credentials',
+      credentials: {
+        email: { label: 'Email', type: 'text' },
+        password: { label: 'Password', type: 'password' },
+      },
+      async authorize(credentials: any): Promise<any> {
+        try {
+          const user = await prisma.user.findUnique({
+            where: {
+              email: credentials.email,
+            }
+          });
+          if (!user) {
+            throw new Error('No user found with this email');
+          }
+          if (!user.isVerified) {
+            throw new Error('Please verify your account before logging in');
+          }
+          if (!user.password) {
+            throw new Error('User does not have a password set');
+          }
+          const isPasswordCorrect = await bcrypt.compare(
+            credentials.password,
+            user.password
+          );
+          if (isPasswordCorrect) {
+            return user;
+          } else {
+            throw new Error('Incorrect password');
+          }
+        } catch (err: any) {
+          throw new Error(err);
+        }
+      },
+    }),
   ],
   pages: {
     signIn: "/signin",

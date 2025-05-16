@@ -1,31 +1,38 @@
-"use client"
+"use client";
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
+import { toast } from "sonner";
+import { Eye, EyeOff, Loader2 } from "lucide-react";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-import { useState } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { signIn } from "next-auth/react"
-import { useForm } from "react-hook-form"
-import { Separator } from "@/components/ui/separator"
-import { Eye, EyeOff, Loader2 } from "lucide-react"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { useRouter } from "next/navigation"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { z } from "zod"
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address" }),
   password: z.string().min(6, { message: "Password must be at least 6 characters" }),
-})
+});
 
-type FormValues = z.infer<typeof formSchema>
+type FormValues = z.infer<typeof formSchema>;
 
 export default function Home() {
-  const router = useRouter()
-  const [error, setError] = useState<string | null>(null)
-  const [isLoading, setIsLoading] = useState(false)
-  const [showPassword, setShowPassword] = useState(false)
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -33,31 +40,32 @@ export default function Home() {
       email: "",
       password: "",
     },
-  })
+  });
 
-  const onSubmit = async (data: FormValues) => {
-    setIsLoading(true)
-    setError(null)
-
+  const onSubmit = async (values: FormValues) => {
+    setIsLoading(true);
     try {
       const result = await signIn("credentials", {
         redirect: false,
-        email: data.email,
-        password: data.password,
-      })
+        email: values.email,
+        password: values.password,
+      });
 
       if (result?.error) {
-        setError("Invalid email or password")
-        setIsLoading(false)
-        return
+        if (result.error === "CredentialsSignin") {
+          toast.error("Incorrect username or password");
+        } else {
+          toast.error(result.error);
+        }
+      } else if (result?.url) {
+        router.replace("/dashboard");
       }
-
-      router.push("/dashboard")
-    } catch (error) {
-      setError("Something went wrong. Please try again.")
-      setIsLoading(false)
+    } catch {
+      toast.error("Server Error occurred. Please try again later.");
+    } finally {
+      setIsLoading(false);
     }
-  }
+  };
 
   return (
     <div className="flex h-screen w-full">
@@ -89,11 +97,10 @@ export default function Home() {
           priority
         />
       </div>
+
       <div className="flex-1 flex items-center justify-center p-8 bg-gray-700">
         <div className="w-full max-w-md">
           <h2 className="text-3xl font-bold text-center mb-6">Welcome to SaasStarter</h2>
-
-          {error && <div className="bg-red-50 text-red-500 px-4 py-2 rounded-md mb-4">{error}</div>}
 
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
@@ -170,9 +177,10 @@ export default function Home() {
               <Separator className="w-full" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className=" px-2 text-white">Or continue with</span>
+              <span className="px-2 text-white">Or continue with</span>
             </div>
           </div>
+
           <Button
             type="button"
             variant="outline"
@@ -195,7 +203,6 @@ export default function Home() {
             Log in with GitHub
           </Button>
 
-
           <p className="text-center mt-6 text-sm text-muted-foreground">
             Don't have an account?{" "}
             <Link href="/signup" className="text-primary hover:underline">
@@ -205,5 +212,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-  )
+  );
 }
