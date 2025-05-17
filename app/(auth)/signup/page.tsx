@@ -55,7 +55,7 @@ export default function SignUp() {
     setError(null)
 
     try {
-      const response = await fetch("/api/auth/register", {
+      const response = await fetch("/api/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -75,7 +75,6 @@ export default function SignUp() {
         return
       }
 
-      // Redirect to sign in page after successful registration
       router.push("/signin?registered=true")
     } catch (error) {
       setError("Something went wrong. Please try again.")
