@@ -1,9 +1,9 @@
 import React from 'react'
-import Navbar from '@/components/landingpage/navbar'
+import LandingPage from '@/components/landingpage/landingpage'
 export default function Home() {
   return (
     <div>
-      <Navbar />
+      <LandingPage />
     </div>
   )
 }
