@@ -8,9 +8,7 @@ export default function LandingPage() {
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
-
           <Navbar />
-
         </div>
       </header>
       <main className="flex-1">
@@ -130,7 +128,6 @@ export default function LandingPage() {
           </div>
         </section>
 
-
         <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -159,8 +156,8 @@ export default function LandingPage() {
                       />
                     </div>
                     <div>
-                      <p className="font-medium">Rahul Sharma</p>
-                      <p className="text-sm text-muted-foreground">CTO, TechStart</p>
+                      <p className="font-medium">Yuvraj</p>
+                      <p className="text-sm text-muted-foreground">web developer</p>
                     </div>
                   </div>
                 </div>
@@ -182,8 +179,8 @@ export default function LandingPage() {
                       />
                     </div>
                     <div>
-                      <p className="font-medium">Priya Patel</p>
-                      <p className="text-sm text-muted-foreground">Lead Developer, InnovateCo</p>
+                      <p className="font-medium">Nitin</p>
+                      <p className="text-sm text-muted-foreground">Senior Software Engineer</p>
                     </div>
                   </div>
                 </div>
