@@ -16,7 +16,6 @@ export default function PricingPage() {
           </div>
         </div>
         <div className="grid gap-6 pt-12 lg:grid-cols-3 lg:gap-8">
-          {/* Starter Plan */}
           <div className="flex flex-col justify-between rounded-lg border bg-card p-6 shadow-sm">
             <div className="space-y-4">
               <h3 className="text-xl font-bold">Starter</h3>
@@ -46,7 +45,6 @@ export default function PricingPage() {
             </Button>
           </div>
 
-          {/* Pro Plan */}
           <div className="flex flex-col justify-between rounded-lg border bg-card p-6 shadow-sm ring-2 ring-primary">
             <div className="space-y-4">
               <div className="inline-block rounded-full bg-primary px-3 py-1 text-xs text-primary-foreground">
@@ -81,7 +79,6 @@ export default function PricingPage() {
             <Button className="mt-6">Get Started</Button>
           </div>
 
-          {/* Enterprise Plan */}
           <div className="flex flex-col justify-between rounded-lg border bg-card p-6 shadow-sm">
             <div className="space-y-4">
               <h3 className="text-xl font-bold">Enterprise</h3>
