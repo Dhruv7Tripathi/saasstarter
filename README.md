@@ -33,6 +33,8 @@ This is a starter template for Next.js projects with built-in authentication, Ra
 
 3. Set up environment variables:
    Copy `.env.example` to `.env` and fill in your details.
+
+   ```bash
    DATABASE_URL=
    NEXTAUTH_URL="http://localhost:3000"
    NEXTAUTH_SECRET=
@@ -45,6 +47,7 @@ This is a starter template for Next.js projects with built-in authentication, Ra
    RAZORPAY_KEY_ID=
    RAZORPAY_KEY_SECRET=
    NEXT_PUBLIC_RAZORPAY_KEY_ID=
+   ```
 
 4. Make .env file same as example env file, if usind docker for database kepp the DATABASE_URL same as example
 
