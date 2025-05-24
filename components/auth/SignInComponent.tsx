@@ -58,7 +58,8 @@ export default function Home() {
           toast.error(result.error);
         }
       } else if (result?.url) {
-        router.replace("/dashboard");
+        router.replace("/pricing");
+        toast.success("Successfully signed in!");
       }
     } catch {
       toast.error("Server Error occurred. Please try again later.");
@@ -185,7 +186,7 @@ export default function Home() {
             type="button"
             variant="outline"
             className="w-full flex items-center justify-center gap-2 py-2"
-            onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
+            onClick={() => signIn("google", { callbackUrl: "/pricing" })}
             disabled={isLoading}
           >
             <Image src="/google.png" alt="Google" width={20} height={20} />
@@ -196,7 +197,7 @@ export default function Home() {
             type="button"
             variant="outline"
             className="w-full flex items-center justify-center gap-2 py-2"
-            onClick={() => signIn("github", { callbackUrl: "/dashboard" })}
+            onClick={() => signIn("github", { callbackUrl: "/pricing" })}
             disabled={isLoading}
           >
             <Image src="/github.png" alt="GitHub" width={20} height={20} />
