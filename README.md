@@ -33,20 +33,28 @@ This is a starter template for Next.js projects with built-in authentication, Ra
 
 3. Set up environment variables:
    Copy `.env.example` to `.env` and fill in your details.
+   DATABASE_URL=
+   NEXTAUTH_URL="http://localhost:3000"
+   NEXTAUTH_SECRET=
+   GOOGLE_CLIENT_SECRET=
+   GOOGLE_CLIENT_ID=
+   GITHUB_CLIENT_ID=
+   GITHUB_CLIENT_SECRET=
+   EMAIL=
+   EMAIL_PASSWORD=
+   RAZORPAY_KEY_ID=
+   RAZORPAY_KEY_SECRET=
+   NEXT_PUBLIC_RAZORPAY_KEY_ID=
 
-4. Start the PostgreSQL database:
-   ```bash
+4. Make .env file same as example env file, if usind docker for database kepp the DATABASE_URL same as example
 
-   ```
-5. Make .env file same as example env file, if usind docker for database kepp the DATABASE_URL same as example
-
-6. Run Prisma migrations:
+5. Run Prisma migrations:
 
    ```bash
    npx prisma migrate dev
    ```
 
-7. Start the development server:
+6. Start the development server:
    ```bash
    npm run dev
    ```
