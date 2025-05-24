@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
                 email,
             }
         })
-        let verifyCode = Math.floor(100000 + Math.random() * 900000).toString();
+        const verifyCode = Math.floor(100000 + Math.random() * 900000).toString();
         const hashedPassword = await bcrypt.hash(password, 10)
 
         if (isUser) {
@@ -78,6 +78,7 @@ export async function POST(req: NextRequest) {
         );
 
     } catch (error) {
+        console.error("Error in signup API:", error)
         return NextResponse.json({ success: false, message: "Server Error Occured" }, { status: 500 })
     }
 }

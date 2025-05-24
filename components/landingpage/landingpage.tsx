@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ShieldCheck, CreditCard, Zap, Code, Users, LineChart, CheckCircle2, ArrowRight, Github } from "lucide-react"
+import { ShieldCheck, CreditCard, Zap, Code, Users, LineChart, ArrowRight, Github } from "lucide-react"
 import Navbar from "./navbar"
 export default function LandingPage() {
   return (
@@ -142,8 +142,8 @@ export default function LandingPage() {
               <div className="flex flex-col justify-between rounded-lg border bg-card p-6 shadow-sm">
                 <div>
                   <p className="mb-4 italic text-muted-foreground">
-                    "This boilerplate saved us weeks of development time. The authentication system and Razorpay
-                    integration worked flawlessly out of the box."
+                    This boilerplate saved us weeks of development time. The authentication system and Razorpay
+                    integration worked flawlessly out of the box.
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="rounded-full bg-muted p-1">
@@ -165,8 +165,8 @@ export default function LandingPage() {
               <div className="flex flex-col justify-between rounded-lg border bg-card p-6 shadow-sm">
                 <div>
                   <p className="mb-4 italic text-muted-foreground">
-                    "The code quality is exceptional. Clean architecture made it easy to customize for our specific
-                    needs. Highly recommended!"
+                    The code quality is exceptional. Clean architecture made it easy to customize for our specific
+                    needs. Highly recommended!
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="rounded-full bg-muted p-1">
@@ -211,7 +211,7 @@ export default function LandingPage() {
                 <div className="space-y-2">
                   <h3 className="text-xl font-bold">Do I need a Razorpay account?</h3>
                   <p className="text-muted-foreground">
-                    Yes, you'll need to create a Razorpay account to use the payment features. We provide detailed
+                    Yes, you&apos;ll need to create a Razorpay account to use the payment features. We provide detailed
                     documentation on how to set up your account and integrate it with our boilerplate.
                   </p>
                 </div>

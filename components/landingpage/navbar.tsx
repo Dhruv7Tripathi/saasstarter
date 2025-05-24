@@ -1,7 +1,6 @@
 'use client'
 import React, { useState } from 'react';
 import Link from 'next/link';
-// import Image from 'next/image';
 import AnchorNav from '../auth/anchor-nav';
 import { useSession } from 'next-auth/react';
 import UserAccountNav from '../auth/UserAccountNav';
@@ -17,7 +16,7 @@ const Navbar = () => {
   };
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Dashboard', href: '/dashboard' },
+    { name: 'pricing', href: '/pricing' },
     { name: 'signup', href: '/signup' },
   ];
   return (
@@ -26,15 +25,6 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-1">
-              {/* <Image
-                src="/logo.png"
-                width={30}
-                height={30}
-                priority={false}
-                alt="Logo"
-                unoptimized={true}
-                className="rounded-xl"
-              /> */}
               <span className="text-2xl font-bold">SaasStarter</span>
             </Link>
           </div>

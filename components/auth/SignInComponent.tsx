@@ -204,7 +204,7 @@ export default function Home() {
           </Button>
 
           <p className="text-center mt-6 text-sm text-muted-foreground">
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link href="/signup" className="text-primary hover:underline">
               Sign up
             </Link>

@@ -23,6 +23,7 @@ export default function VerifyForm({ email }: { email: string }) {
       toast.success(response.data.message);
       router.replace('/signin');
     } catch (error) {
+      console.error('Error verifying OTP:', error);
       toast.error('Invalid OTP or email');
     } finally {
       setLoading(false)

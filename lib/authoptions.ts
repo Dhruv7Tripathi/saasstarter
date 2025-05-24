@@ -23,8 +23,11 @@ export const authOptions = {
         email: { label: 'Email', type: 'text' },
         password: { label: 'Password', type: 'password' },
       },
-      async authorize(credentials: any): Promise<any> {
+      async authorize(credentials: { email: string; password: string } | undefined): Promise<import("@prisma/client").User | null> {
         try {
+          if (!credentials) {
+            throw new Error('No credentials provided');
+          }
           const user = await prisma.user.findUnique({
             where: {
               email: credentials.email,
@@ -48,8 +51,11 @@ export const authOptions = {
           } else {
             throw new Error('Incorrect password');
           }
-        } catch (err: any) {
-          throw new Error(err);
+        } catch (err) {
+          if (err instanceof Error) {
+            throw new Error(err.message);
+          }
+          throw err;
         }
       },
     }),

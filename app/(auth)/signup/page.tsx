@@ -77,6 +77,7 @@ export default function SignUp() {
 
       router.push("/signin?registered=true")
     } catch (error) {
+      console.error("Error during signup:", error)
       setError("Something went wrong. Please try again.")
       setIsLoading(false)
     }

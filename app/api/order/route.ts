@@ -26,8 +26,12 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ orderId: order.id, order }, { status: 200 });
 
-  } catch (error: any) {
-    console.error('Error creating Razorpay order:', error);
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error('Error creating Razorpay order:', error.message);
+    } else {
+      console.error('Error creating Razorpay order:', error);
+    }
     return NextResponse.json(
       { error: 'Failed to create order' },
       { status: 500 }
