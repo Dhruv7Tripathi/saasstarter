@@ -3,6 +3,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ShieldCheck, CreditCard, Zap, Code, Users, LineChart, ArrowRight, Github } from "lucide-react"
 import Navbar from "./navbar"
+import { PricingLayout } from "../layout/pricing"
 export default function LandingPage() {
   return (
     <div className="flex min-h-screen flex-col">
@@ -188,6 +189,9 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
+        <div>
+          <PricingLayout />
+        </div>
 
         <section id="faq" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
