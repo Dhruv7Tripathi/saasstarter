@@ -18,6 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Starter Kit",
   description: "It is a starter kit for Next.js 13.4+",
+
 };
 
 export default function RootLayout({

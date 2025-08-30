@@ -7,11 +7,6 @@ import { PricingLayout } from "../layout/pricing"
 export default function LandingPage() {
   return (
     <div className="flex min-h-screen flex-col">
-      {/* <header className="sticky top-0 z-40 w-full border-b bg-background/95 dark:bg-black backdrop-blur supports-[backdrop-filter]:bg-background/60"> */}
-      {/* <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
-          <Navbar />
-        </div> */}
-      {/* </header> */}
       <main className="flex-1">
         <section className="max-w-8xl px-12 py-12 md:py-24 lg:py-32 xl:py-48">
           <div className="container px-4 md:px-6">
@@ -51,7 +46,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+        <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-neutral-50 dark:bg-neutral-900">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -130,66 +125,6 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Trusted by Developers</h2>
-                <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  See what others are saying about our SaaS boilerplate
-                </p>
-              </div>
-            </div>
-            <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-2 lg:gap-12">
-              <div className="flex flex-col justify-between rounded-lg border bg-card p-6 shadow-sm">
-                <div>
-                  <p className="mb-4 italic text-muted-foreground">
-                    This boilerplate saved us weeks of development time. The authentication system and Razorpay
-                    integration worked flawlessly out of the box.
-                  </p>
-                  <div className="flex items-center gap-4">
-                    <div className="rounded-full bg-muted p-1">
-                      <Image
-                        src="/placeholder.svg?height=40&width=40"
-                        width={40}
-                        height={40}
-                        alt="Avatar"
-                        className="rounded-full"
-                      />
-                    </div>
-                    <div>
-                      <p className="font-medium">Yuvraj</p>
-                      <p className="text-sm text-muted-foreground">web developer</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col justify-between rounded-lg border bg-card p-6 shadow-sm">
-                <div>
-                  <p className="mb-4 italic text-muted-foreground">
-                    The code quality is exceptional. Clean architecture made it easy to customize for our specific
-                    needs. Highly recommended!
-                  </p>
-                  <div className="flex items-center gap-4">
-                    <div className="rounded-full bg-muted p-1">
-                      <Image
-                        src="/placeholder.svg?height=40&width=40"
-                        width={40}
-                        height={40}
-                        alt="Avatar"
-                        className="rounded-full"
-                      />
-                    </div>
-                    <div>
-                      <p className="font-medium">Nitin</p>
-                      <p className="text-sm text-muted-foreground">Senior Software Engineer</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
         <div>
           <PricingLayout />
         </div>
@@ -204,7 +139,7 @@ export default function LandingPage() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid space-y-2 max-w-5xl gap-6 py-12 lg:gap-12">
+            <div className="mx-auto grid space-y-2 max-w-5xl gap-6 py-12 lg:gap-14">
               <div className="grid gap-6 md:grid-cols-2">
                 <div className="space-y-2">
                   <h3 className="text-xl font-semibold">What technologies does the boilerplate use ?</h3>
@@ -263,14 +198,14 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-primary text-primary-foreground">
+        <section className="w-full py-12 md:py-24 lg:py-32 rounded-2xl bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-50">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                  Ready to Start Building?
+              <div className="space-y-3">
+                <h2 className="text-3xl font-semibold tracking-tighter sm:text-4xl md:text-5xl">
+                  Ready to Start Building ?
                 </h2>
-                <p className="mx-auto max-w-[700px] md:text-xl/relaxed">
+                <p className="mx-auto max-w-[700px] md:text-lg">
                   Get your SaaS up and running in minutes, not months.
                 </p>
               </div>
