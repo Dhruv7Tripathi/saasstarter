@@ -7,18 +7,18 @@ import { PricingLayout } from "../layout/pricing"
 export default function LandingPage() {
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
+      {/* <header className="sticky top-0 z-40 w-full border-b bg-background/95 dark:bg-black backdrop-blur supports-[backdrop-filter]:bg-background/60"> */}
+      {/* <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
           <Navbar />
-        </div>
-      </header>
+        </div> */}
+      {/* </header> */}
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+        <section className="max-w-8xl px-12 py-12 md:py-24 lg:py-32 xl:py-48">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                  <h1 className="text-3xl max-w-3xl font-semibold tracking-tighter sm:text-5xl xl:text-6xl/none">
                     Launch Your SaaS Faster With Our Complete Boilerplate
                   </h1>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl">
@@ -46,6 +46,7 @@ export default function LandingPage() {
                 alt="SaaS Dashboard Preview"
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
               />
+              {/* <RocketIllustration /> */}
             </div>
           </div>
         </section>
@@ -265,24 +266,7 @@ export default function LandingPage() {
           </div>
         </section>
       </main>
-      <footer className="w-full border-t bg-background">
-        <div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0">
-          <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
-            <Zap className="h-6 w-6" />
-            <p className="text-center text-sm leading-loose md:text-left">
-              &copy; {new Date().getFullYear()} SaaSBoost. All rights reserved.
-            </p>
-          </div>
-          <div className="flex gap-4">
-            <Link href="/terms" className="text-sm underline underline-offset-4">
-              Terms
-            </Link>
-            <Link href="/privacy" className="text-sm underline underline-offset-4">
-              Privacy
-            </Link>
-          </div>
-        </div>
-      </footer>
+
     </div>
   )
 }

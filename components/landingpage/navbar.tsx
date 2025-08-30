@@ -6,7 +6,6 @@ import { useSession } from 'next-auth/react';
 import UserAccountNav from '../auth/UserAccountNav';
 import SignInButton from '../auth/SignInButton';
 import { Menu, X } from 'lucide-react';
-
 const Navbar = () => {
   const { data: session } = useSession();
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +22,11 @@ const Navbar = () => {
     <nav className="z-50 sticky top-0 w-full dark:bg-zinc-950/10 bg-white/15 shadow-lg shadow-neutral-600/5 backdrop-blur-lg border-b border-primary/10">
       <div className="max-w-[88rem] mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
+          <div className="flex space-x-2 items-center">
+
+            {/* <Image src="/saaslogo.png" alt="SaasStarter Logo"
+              className='rounded-md' width={40} height={40} /> */}
+
             <Link href="/" className="flex items-center space-x-1">
               <span className="text-2xl font-bold">SaasStarter</span>
             </Link>
