@@ -19,6 +19,7 @@ export const TIERS = [
       "Up to 3 seats",
     ],
     cta: "Get started",
+    // href: "/pricing/individuals",
   },
   {
     id: "teams",
@@ -72,6 +73,7 @@ export const TIERS = [
     ],
     cta: "Contact Us",
     highlighted: true,
+    // href: "https://twitter.com/dhruvtripathi77"
   },
 ]
 
@@ -82,7 +84,7 @@ export function PricingLayout() {
         <div className="h-full w-full bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:35px_35px] opacity-30 [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
       </div>
       <PricingSection
-        title="Pricing"
+        title="Pricing Plans"
         subtitle="Choose the best plan for your needs"
         frequencies={PAYMENT_FREQUENCIES}
         tiers={TIERS}

@@ -194,43 +194,68 @@ export default function LandingPage() {
           <PricingLayout />
         </div>
 
-        <section id="faq" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
+        <section id="faq" className="w-full min-h-screen py-12 md:py-24 lg:py-32">
+          <div className="container space-y-2  max-w-8xl px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Frequently Asked Questions</h2>
-                <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                <p className="max-w-[600px] text-neutral-700 dark:text-neutral-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-lg">
                   Everything you need to know about our SaaS boilerplate
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:gap-12">
+            <div className="mx-auto grid space-y-2 max-w-5xl gap-6 py-12 lg:gap-12">
               <div className="grid gap-6 md:grid-cols-2">
                 <div className="space-y-2">
-                  <h3 className="text-xl font-bold">What technologies does the boilerplate use?</h3>
+                  <h3 className="text-xl font-semibold">What technologies does the boilerplate use ?</h3>
                   <p className="text-muted-foreground">
                     Our boilerplate is built with Next.js, React, TypeScript, and Tailwind CSS for the frontend. The
                     backend uses Node.js with Express and MongoDB.
                   </p>
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-xl font-bold">Do I need a Razorpay account?</h3>
+                  <h3 className="text-xl font-semibold">Do I need a Razorpay account ?</h3>
                   <p className="text-muted-foreground">
                     Yes, you&apos;ll need to create a Razorpay account to use the payment features. We provide detailed
                     documentation on how to set up your account and integrate it with our boilerplate.
                   </p>
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-xl font-bold">Can I customize the authentication system?</h3>
+                  <h3 className="text-xl font-semibold">Can I customize the authentication system ?</h3>
                   <p className="text-muted-foreground">
                     The authentication system is modular and can be easily customized to fit your specific requirements.
                   </p>
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-xl font-bold">Is there documentation available?</h3>
+                  <h3 className="text-xl font-semibold">Is there documentation available ?</h3>
                   <p className="text-muted-foreground">
                     Yes, comprehensive documentation is included with the boilerplate, covering everything from setup to
                     advanced customization.
+                  </p>
+                </div>
+                {/* Additional FAQs */}
+                <div className="space-y-2">
+                  <h3 className="text-xl font-semibold">Does SaaS Starter support team-based features?</h3>
+                  <p className="text-muted-foreground">
+                    Yes, SaaS Starter includes built-in support for team management, allowing users to invite team members, assign roles, and collaborate within the application.
+                  </p>
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-xl font-semibold">Can I deploy SaaS Starter to any cloud provider?</h3>
+                  <p className="text-muted-foreground">
+                    Absolutely. SaaS Starter is cloud-agnostic and can be deployed to providers like Vercel, AWS, Azure, or DigitalOcean with minimal configuration.
+                  </p>
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-xl font-semibold">Is there a free trial or demo available ?</h3>
+                  <p className="text-muted-foreground">
+                    Yes, you can try a live demo of SaaS Starter or explore the codebase for free before making a purchase or commitment.
+                  </p>
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-xl font-semibold">How do I get support if I run into issues ?</h3>
+                  <p className="text-muted-foreground">
+                    We offer community support via GitHub issues and email. Premium support options are also available for enterprise customers.
                   </p>
                 </div>
               </div>

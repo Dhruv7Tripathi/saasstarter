@@ -9,6 +9,7 @@ interface PricingSectionProps {
   subtitle: string
   tiers: PricingTier[]
   frequencies: string[]
+  // href?: string
 }
 
 export function PricingSection({

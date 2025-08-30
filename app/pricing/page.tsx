@@ -131,7 +131,7 @@ import {
 import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Navbar from "@/components/landingpage/navbar";
+import { PricingLayout } from "@/components/layout/pricing";
 
 type PricingCardProps = {
   title: string;
@@ -195,8 +195,7 @@ export default function Page() {
   ];
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <div className="flex-grow container py-8 flex flex-col items-center justify-center text-center">
+      {/* <div className="flex-grow container py-8 flex flex-col items-center justify-center text-center">
         <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight mb-4">Pricing Plans</h1>
         <h2 className="scroll-m-20 text-2xl font-semibold tracking-tight mb-12">Choose the plan that&apos;s right for you</h2>
         <section className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-8">
@@ -204,7 +203,9 @@ export default function Page() {
             return <PricingCard key={plan.title} {...plan} />;
           })}
         </section>
-      </div>
+      </div> */}
+
+      <PricingLayout />
     </div>
   );
 }

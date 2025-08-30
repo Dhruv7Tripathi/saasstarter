@@ -1,6 +1,8 @@
 "use client"
 
 import * as React from "react"
+import { useSession, signIn } from "next-auth/react"
+import { useRouter } from "next/navigation"
 import { BadgeCheck, ArrowRight } from "lucide-react"
 import NumberFlow from "@number-flow/react"
 
@@ -28,6 +30,19 @@ export function PricingCard({ tier, paymentFrequency }: PricingCardProps) {
   const price = tier.price[paymentFrequency]
   const isHighlighted = tier.highlighted
   const isPopular = tier.popular
+
+  const { data: session } = useSession()
+  const router = useRouter()
+
+  const handleCheckout = () => {
+    if (!session) {
+      // Redirect to sign-in page
+      signIn()
+    } else {
+      // Proceed to checkout
+      router.push(`/checkout/?amount=${price}`)
+    }
+  }
 
   return (
     <Card
@@ -93,6 +108,7 @@ export function PricingCard({ tier, paymentFrequency }: PricingCardProps) {
       <Button
         variant={isHighlighted ? "secondary" : "default"}
         className="w-full"
+        onClick={handleCheckout}
       >
         {tier.cta}
         <ArrowRight className="ml-2 h-4 w-4" />
